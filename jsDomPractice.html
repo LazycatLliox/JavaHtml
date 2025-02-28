@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practiving JS/DOM Interface</title>
+</head>
+<body>
+    <h1 id="myHeading"></h1>
+    <p>The central theme of Mary Shelley's Frankenstien is clearly laid out in the first few pages of the text(1).</p>
+
+    <p id="newPara"></p>
+    <script>
+        var header = document.getElementById("myHeading");
+        header.innerHTML = "My essay on Frankenstien";
+
+
+        // apeand Child()
+        var footNote = document.createElement("p");
+        footNote.innerHTML = "1. From page 5 of <i>Frankenstien</i>";
+        // add child 
+        document.body.appendChild(footNote);
+
+        // add another paragraph 
+        
+        var paragraph = document.getElementById("newPara");
+        paragraph.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper leo ut tortor pretium, tempor porta diam gravida. Proin eu eros laoreet, condimentum metus a, aliquam erat. Donec lobortis vitae enim vitae pretium. Vivamus rhoncus quis est ac sollicitudin. Duis eu dui quis sapien aliquet porta ut sit amet nulla. Donec pulvinar leo id eros elementum, nec ullamcorper leo sagittis. Mauris sit amet condimentum nunc.";
+      
+        // new foot note 
+        var footNote2 = document.createElement("p");
+        footNote2.innerHTML = "2. This is a text generator <i>Lorem Ipsum</i>";
+        document.body.appendChild(footNote2)
+
+        // use insertBefore()
+        var subTitle = document.createElement("h2");
+        subTitle.innerHTML = "This is my Sub Title";
+
+        // capture the element we want to the h2 before 
+        // new para var is above
+        document.body.insertBefore(subTitle, paragraph);
+
+    </script>
+</body>
+</html>
