@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js This Keyword</title>
+</head>
+<body>
+    <p onclick="turnRed(this)">Click Me!</p>
+
+    <p onclick="turnRed(this)">Click Me Too!</p>
+    <p onclick="turnRed(this)">Click Me Do It!</p>
+    <p onclick="turnRed(this)">Click Me Too!</p>
+    <script>
+        function turnRed(element) {
+            element.style.color = "red";
+            element.style.backgroundColor = "black";
+            element.style.fontSize = "25px";
+            element.style.margin = "10px";
+            element.style.padding = "5px 5px 10px 20px";
+        }
+    </script>
+</body>
+</html>
