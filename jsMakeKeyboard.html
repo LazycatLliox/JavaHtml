@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Keyboard with key events</title>
+    <style>
+        #textbox{
+            border: 1px dotted hotpink;
+            height: 200px;
+            width: 80%;
+            margin: 20px;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        p{
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Updated Keyboard with key events</h3>
+
+    <p>type using your Keyboard to see text display in the div!
+        <br>make sure to click the div <i>before</i> trying to type!
+
+    </p>
+    <div id="textbox"></div>
+
+    <script>
+        document.body.addEventListener("keydown", makeText);
+
+        function makeText(e){
+            var div = document.getElementById("textbox");
+
+            // use this to prevent the shift key appearing in the text box.
+
+            if(e.key != "Shift"){
+                var keyText = e.key;
+                var text = div.innerHTML;
+                text += keyText;
+                div.innerHTML = text;
+            }
+        }
+    </script>
+</body>
+</html>
