@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript coordinate plan example</title>
+</head>
+    <style>
+        html body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+        }
+
+        div {
+            font-weight: bold;
+            font-size: 16px;
+            margin: 10px;
+        }
+        #coordinates {
+            color: green;
+        }
+
+    </style>
+<body>
+    <div>Click on page to see the x - y coordinates of the document!</div>
+
+    <div id="coordinates"></div>
+
+    <script>
+        // Add the event to the html document to get the x, y coordinates
+
+        document.addEventListener("click", getXY);
+
+        // we dont have use the word event for the event handler any parameter passed will work.
+        
+        function getXY (e){
+            var x = "X: " + e.x;
+            var y = "Y: " + e.y;
+            var cord = document.getElementById("coordinates");
+            cord.innerHTML = x + ", " + y 
+        }
+    </script>
+</body>    
+
+</html>
