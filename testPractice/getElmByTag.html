@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Get Elements By Tag Name</title>
+</head>
+<body>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+
+    <script>
+        var p = document.getElementsByTagName("p");
+
+        // the line above creates a list of all the p tags in html doc. Can navigate through the paragraphs using the index 
+
+        p[1].style.backgroundColor = "orange";
+
+        p[2].style.fontSize = "50px";
+
+        for(var para of p){
+            para.style.color ="goldenrod";
+        }
+    </script>
+</body>
+</html>
