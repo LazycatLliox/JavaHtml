@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Json</title>
+</head>
+<body>
+    <h2>Open the console to see how JSON can be use to store and retrive data</h2>
+
+    <script>
+        var listOfScores = [10, 30, 455, 80];
+
+        console.log("With out JSON: ");
+
+        localStorage.setItem("scores", listOfScores);
+
+        console.log("Values stored in 'scores': " + localStorage.scores);
+        console.log("Data type of Local Storage" + typeof(localStorage.scores));
+        console.log("The second Item of the listOfScores"+ localStorage.scores[1]);
+
+        // Now using JSON
+
+        localStorage.setItem("scores", JSON.stringify(listOfScores));
+
+        console.log("With JSON:");
+
+        console.log("Values Stored in 'scores': " + localStorage.scores);
+        console.log("data type of stringifyed local storage " + typeof(localStorage.scores));
+        console.log("Data type of parsed localSorage " + typeof(JSON.parse(localStorage.scores)));
+        console.log("Second index of parsed localStorage: " + JSON.parse(localStorage.scores)[2]);
+
+    </script>
+</body>
+</html>
